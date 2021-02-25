@@ -1,0 +1,5 @@
+file_path,manufacturer,model,displ,year,cyl,trans,drv,cty,hwy,fl,class
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/mercury.csv,mercury,mountaineer 4wd,4,1999,6,auto(l5),4,14,17,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/mercury.csv,mercury,mountaineer 4wd,4,2008,6,auto(l5),4,13,19,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/mercury.csv,mercury,mountaineer 4wd,4.6,2008,8,auto(l6),4,13,19,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/mercury.csv,mercury,mountaineer 4wd,5,1999,8,auto(l4),4,13,17,r,suv

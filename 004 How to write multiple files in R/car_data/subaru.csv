@@ -1,0 +1,15 @@
+file_path,manufacturer,model,displ,year,cyl,trans,drv,cty,hwy,fl,class
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,1999,4,manual(m5),4,18,25,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,1999,4,auto(l4),4,18,24,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,2008,4,manual(m5),4,20,27,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,2008,4,manual(m5),4,19,25,p,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,2008,4,auto(l4),4,20,26,r,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,forester awd,2.5,2008,4,auto(l4),4,18,23,p,suv
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.2,1999,4,auto(l4),4,21,26,r,subcompact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.2,1999,4,manual(m5),4,19,26,r,subcompact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,1999,4,manual(m5),4,19,26,r,subcompact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,1999,4,auto(l4),4,19,26,r,subcompact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,2008,4,auto(s4),4,20,25,p,compact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,2008,4,auto(s4),4,20,27,r,compact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,2008,4,manual(m5),4,19,25,p,compact
+E:/Qualitest/Code/2021/Learn-R-Programming/004 How to write multiple files in R/car_data/subaru.csv,subaru,impreza awd,2.5,2008,4,manual(m5),4,20,27,r,compact
