@@ -3,6 +3,7 @@
 #install.packages('readxl')
 library(readxl)
 library(dplyr)
+library(tidyr)
 
 # Read Files ----
 
@@ -39,3 +40,37 @@ bike_orderlines_joined_tbl <- orderlines_tbl %>%
 
 
 bike_orderlines_joined_tbl %>% glimpse()
+
+# Wrangling Data ----
+
+?separate
+
+bike_orderlines_joined_tbl %>%
+
+    # Separate description into category 1, category 2 and frame material
+    separate(col = description,
+             into = c('category.1','category.2',
+                      'frame.material'),
+             sep = " - ",
+             remove = FALSE) %>%
+
+
+    # Separate location into city and state
+    separate(location,
+             into = c('city','state'),
+             sep = ', ',
+             remove = FALSE) %>% #glimpse()
+
+    # price extended
+    mutate(total.price = price * quantity) %>%
+
+    # Reorganize
+    select(-...1, -location) %>%
+    select(-ends_with('.id')) %>%
+
+
+    glimpse()
+
+    #View()
+
+
