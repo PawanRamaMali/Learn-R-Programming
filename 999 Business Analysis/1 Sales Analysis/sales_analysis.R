@@ -45,7 +45,7 @@ bike_orderlines_joined_tbl %>% glimpse()
 
 ?separate
 
-bike_orderlines_joined_tbl %>%
+bike_orderlines_wrangled_tbl <- bike_orderlines_joined_tbl %>%
 
     # Separate description into category 1, category 2 and frame material
     separate(col = description,
@@ -64,13 +64,30 @@ bike_orderlines_joined_tbl %>%
     # price extended
     mutate(total.price = price * quantity) %>%
 
-    # Reorganize
-    select(-...1, -location) %>%
+    # * Reorganize ----
+    select(-...1, -location, -description) %>%
     select(-ends_with('.id')) %>%
 
+    bind_cols(bike_orderlines_joined_tbl %>%
+                  select(order.id)) %>%
+
+    # * Reorder columns ----
+    select(contains('date'),
+           contains('id'),
+           contains('order'),
+           quantity,
+           price,
+           total.price,
+           everything()) %>%
+
+    # * Rename columns ----
+    rename( order_date = order.date) %>%
+    rlang::set_names(names(.) %>%
+                         stringr::str_replace_all("\\.", "_")) %>%
 
     glimpse()
 
     #View()
 
+bike_orderlines_wrangled_tbl %>% glimpse()
 
