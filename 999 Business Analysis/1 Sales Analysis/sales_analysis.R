@@ -91,3 +91,22 @@ bike_orderlines_wrangled_tbl <- bike_orderlines_joined_tbl %>%
 
 bike_orderlines_wrangled_tbl %>% glimpse()
 
+
+# Business Insights ----
+
+
+#*  Manipulate ----
+
+bike_orderlines_wrangled_tbl %>%
+
+    # Selecting columns to focus on and adding a year column
+    select(order_date, total_price) %>%
+    mutate(year = year(order_date)) %>%
+
+    # Grouping by year and summarizing sales
+    group_by(year) %>%
+    summarize(sales = sum(total_price))
+
+
+
+
