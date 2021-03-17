@@ -97,7 +97,7 @@ bike_orderlines_wrangled_tbl %>% glimpse()
 
 #*  Manipulate ----
 
-bike_orderlines_wrangled_tbl %>%
+sales_by_year_tbl <- bike_orderlines_wrangled_tbl %>%
 
     # Selecting columns to focus on and adding a year column
     select(order_date, total_price) %>%
@@ -105,8 +105,25 @@ bike_orderlines_wrangled_tbl %>%
 
     # Grouping by year and summarizing sales
     group_by(year) %>%
-    summarize(sales = sum(total_price))
+    summarize(sales = sum(total_price)) %>%
+    ungroup() %>%
+
+    # $ Format Text
+    mutate(sales_text = scales::dollar(sales))
 
 
+sales_by_year_tbl
 
+#* Visualize
 
+sales_by_year_tbl %>%
+
+    # Setup canvas with year (x-axis) and sales (y-axis)
+    ggplot(aes(x = year, y = sales)) +
+
+    # Geometries
+    geom_col(fill = "cornflowerblue")+
+    geom_label(aes(label = sales_text))+
+    geom_smooth(method = "lm", se = FALSE)
+
+   # palette_light() #A6CEE3
