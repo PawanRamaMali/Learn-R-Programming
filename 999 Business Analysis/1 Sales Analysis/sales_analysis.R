@@ -5,6 +5,9 @@ library(readxl)
 library(dplyr)
 library(tidyr)
 
+library(tidyquant)
+library(ggplot2)
+
 # Read Files ----
 
 ?read_excel
@@ -124,6 +127,86 @@ sales_by_year_tbl %>%
     # Geometries
     geom_col(fill = "cornflowerblue")+
     geom_label(aes(label = sales_text))+
-    geom_smooth(method = "lm", se = FALSE)
+    geom_smooth(method = "lm", se = FALSE) +
 
    # palette_light() #A6CEE3
+
+    # Formatting
+    theme_tq() +
+        scale_y_continuous(labels = scales::dollar)+
+        labs(
+            title = "Revenue by year",
+            subtitle = "Upward Trend",
+            x = "",
+            y = "Revenue"
+        )
+
+
+# Sales by Year and Category 2 ----
+
+#*  Manipulate ----
+
+sales_by_year_cat_2_tbl <- bike_orderlines_wrangled_tbl %>%
+
+    #Selecting columns and add a year
+    select(order_date, total_price,category_2) %>%
+    mutate(year = year(order_date)) %>%
+
+    #Groupby and Summarize year and category 2
+    group_by(year, category_2) %>%
+    summarise(sales = sum(total_price)) %>%
+    ungroup() %>%
+
+    # Format $ Text
+    mutate(sales_text = scales::dollar(sales))
+
+
+sales_by_year_cat_2_tbl
+
+#* Visualize ----
+
+sales_by_year_cat_2_tbl %>%
+
+    # Setup x, y,fill
+    ggplot(aes(x= year,y=sales, fill= category_2))+
+
+    # Geometries
+    geom_col()+
+    geom_smooth(method = "lm",se = FALSE)+
+
+    # Facet
+    facet_wrap(~ category_2, ncol = 3,scales = "free_y" )+
+
+    # Formatting
+    theme_tq()+
+    scale_fill_tq()+
+    scale_y_continuous(labels = scales::dollar)+
+    labs(
+        title = "Revenue by Year and Category 2",
+        subtitle = "Each product category has an upward trend",
+        x = "",
+        y = "Revenue",
+        fill = "Product Secondary  Category"
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
