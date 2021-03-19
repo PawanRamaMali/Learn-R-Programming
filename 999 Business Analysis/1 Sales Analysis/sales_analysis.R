@@ -192,7 +192,6 @@ sales_by_year_cat_2_tbl %>%
 
 
 
-
 #* Writing Files ----
 
 
@@ -203,6 +202,9 @@ fs::dir_create("data/data_wrangled_student")
 
 bike_orderlines_wrangled_tbl %>%
     write_xlsx("data/data_wrangled_student/bike_orderlines.xlsx")
+
+
+
 
 
 
