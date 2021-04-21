@@ -1,13 +1,3 @@
-# R TIPS ----
-# TIP 016 | Custom Time Series Plots (Bonus Cyberpunk ggplot Theme) ----
-# - Plotting time series
-# - Customize ggplot
-# - Use a cyberpunk-style plot
-#
-# 👉 For Weekly R-Tips, Sign Up Here: https://mailchi.mp/business-science/r-tips-newsletter
-
-# Use Case:
-# - Use customized interactive time series plots in Shiny Web Apps!
 
 # LIBRARIES ----
 library(plotly)
@@ -20,7 +10,7 @@ walmart_sales_weekly
 
 # 2.0 QUICK VISUALIZATION ----
 # * Using timetk::plot_time_series()
-# - timetk visualization is covered in DS4B 203-R Week 2
+
 
 g1 <- walmart_sales_weekly %>%
     group_by(id) %>%
@@ -36,7 +26,6 @@ g1 <- walmart_sales_weekly %>%
 g1
 
 # 3.0 FROM SCRATCH ----
-# - ggplot2 is covered in DS4B 101-R Week 4
 
 walmart_sales_weekly %>%
     ggplot(aes(Date, Weekly_Sales, color = id, group = id)) +
@@ -55,8 +44,6 @@ walmart_sales_weekly %>%
     theme(legend.position = "bottom")
 
 # 4.0 CYBERPUNK STYLE ----
-# - Customizing ggplots is covered in DS4B 101-R Week 4
-# - Credit: https://github.com/R-CoderDotCom/cyberpunk/blob/main/R/cyberpunklines.R
 
 # * Setup a Color Palette ----
 clrs <- colorRampPalette(c("#00ff9f", "#00b8ff", "#001eff", "#bd00ff", "#d600ff"))(7)
